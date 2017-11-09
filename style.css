@@ -7,8 +7,25 @@ body{
 	background-color: #fff;
 	box-shadow: 7px 7px 8px #222;
 	border-radius: 7px;
-	margin: 50px auto 10px;
-	cursor: url(img/cursor.png), auto
+	margin: 30px auto 10px;
+}
+
+.pen{
+	border: none;
+	border-radius: 5px;
+	padding: 10px 33px;
+	font-size: 10px;
+	cursor: pointer;
+	background-color: #469039;
+}
+
+.eraser{
+	border: none;
+	border-radius: 5px;
+	padding: 10px 33px;
+	font-size: 10px;
+	cursor: pointer;
+	background-color: #469039;
 }
 
 .container{
@@ -28,7 +45,7 @@ body{
 .showingcolor{
 	border: none;
 	border-radius: 5px;
-	padding: 20px 33px;
+	padding: 15px 33px;
 	font-size: 20px;
 	cursor: pointer;
 	background-color: #68B25B;
@@ -89,3 +106,6 @@ body{
 	height: 44px;
 	border: 5px solid white;
 }
+
+
+

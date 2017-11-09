@@ -6,15 +6,22 @@ var checkcolor = document.getElementsByClassName("checkcolor")[0];
 var initcolor = document.getElementsByClassName("initcolor");
 var setcolor = document.getElementsByClassName("setcolor")[0];
 var initialcolor = document.getElementsByClassName("initialcolor")[0];
+var container = document.getElementsByClassName("container")[0];
+var pen = document.getElementById("pen");
+var eraser = document.getElementById("eraser");
+
 
 var x=y=z = 0;
+var penmode;
 var color = "#fc4c4f"
+var ctx = canvas.getContext("2d")
 
 canvas.width = canvas.clientWidth;
 canvas.height = canvas.clientHeight;
 
 checkcolor.style.backgroundColor = rgb(0,0,0);
 finalcolor.style.display = "none"
+container.style.display = "none"
 
 
 showingcolor.onclick = visibilityof()
@@ -84,24 +91,22 @@ rangecolor[2].onmouseup = function(){
 
 
 
-var ctx = canvas.getContext("2d")
+pen.onclick = function(){
+	penmode = true
+	container.style.display = "block"
+	canvas.style.cursor = "url('img/cursor.png'), auto"
+}
+
+eraser.onclick = function(){
+	penmode = false
+	container.style.display = "none"
+	canvas.style.cursor = "auto"
+}
 
 
 canvas.onmousedown = function(e){
 	lastEvent = e;
   	mouseDown = true;
-}
-
-canvas.onmousemove = function(e){
-	if(mouseDown){
-		var rect = canvas.getBoundingClientRect()
-		ctx.beginPath();
-	    ctx.moveTo(lastEvent.offsetX, lastEvent.offsetY);
-	    ctx.lineTo(e.offsetX, e.offsetY);
-	    ctx.strokeStyle = color;
-	    ctx.stroke();
-	    lastEvent = e;
-	}
 }
 
 canvas.onmouseup = function(){
@@ -110,4 +115,29 @@ canvas.onmouseup = function(){
 
 canvas.onmouseleave = function(){
 	canvas.onmouseup();
+}
+
+
+canvas.onmousemove = function(e){
+	if(mouseDown){
+		if(penmode){
+			ctx.globalCompositeOperation='source-over'
+			ctx.lineWidth = 1
+			ctx.beginPath();
+		    ctx.moveTo(lastEvent.offsetX, lastEvent.offsetY);
+		    ctx.lineTo(e.offsetX, e.offsetY);
+		    ctx.strokeStyle = color;
+		    ctx.stroke();
+		    lastEvent = e;
+		}
+		else{
+			ctx.globalCompositeOperation='destination-out'
+			ctx.lineWidth = 10
+			ctx.beginPath();
+		    ctx.moveTo(lastEvent.offsetX, lastEvent.offsetY);
+		    ctx.lineTo(e.offsetX, e.offsetY);
+		    ctx.stroke();
+		    lastEvent = e;
+		}
+	}
 }
