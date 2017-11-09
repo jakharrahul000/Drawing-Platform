@@ -1,0 +1,91 @@
+body{
+	background-color: #384047;
+	margin: 0;
+}
+
+#myCanvas{
+	background-color: #fff;
+	box-shadow: 7px 7px 8px #222;
+	border-radius: 7px;
+	margin: 50px auto 10px;
+	cursor: url(img/cursor.png), auto
+}
+
+.container{
+	margin: 0 auto;
+	width: 600px; 
+}
+
+.initcolor{
+	display: inline-block;
+	width: 54px;
+	height: 54px;
+	border-radius: 50%;
+	margin: 10px;
+	cursor: pointer;
+}
+
+.showingcolor{
+	border: none;
+	border-radius: 5px;
+	padding: 20px 33px;
+	font-size: 20px;
+	cursor: pointer;
+	background-color: #68B25B;
+}
+
+.finalcolor{
+	width: 320px;
+	background-color: white;
+	border-radius: 5px
+}
+
+.checkcolor{
+	display: inline-block;
+	width: 80px;
+	height: 80px;
+	margin: 20px 10px 10px 10px;
+	float: left;
+}
+
+.formdiv{
+	display: inline-block;
+	width: 200px;
+	margin-top: -5px;
+	margin-left: 10px;
+}
+
+.labeldiv{
+	margin: 5px;
+}
+
+.setcolor{
+	border: none;
+	font-size: 20px;
+	cursor: pointer;
+	background-color: #68B25B;
+	width: 100%;
+	padding: 20px;
+	margin-top: 5px;
+	border-radius: 0 0 5px 5px;
+}
+
+.finalcolor::before{
+	content: "";
+	border: solid transparent;
+	position: relative;
+	border-color: rgba(255, 255, 255, 0);
+	border-bottom-color: white;
+	border-width: 13px;
+	height: 0;
+	width: 0;
+	pointer-events: none;
+	left: 47px;
+	bottom: 30px;
+}
+
+.selected{
+	width: 44px;
+	height: 44px;
+	border: 5px solid white;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>Drawing Platform</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+
+	<body>
+		<div class="canvasdiv" style="text-align: center;">
+			<canvas id="myCanvas" style="width:600px; height:400px;"></canvas>
+		</div>
+		<div class="container">
+			<div class="bucolor" style="text-align: center;">
+				<div class="initialcolor" style="margin: 10px auto;">
+					<span class="initcolor selected" style="background-color: #fc4c4f;"></span>
+					<span class="initcolor" style="background-color: #4fa3fc;"></span>
+					<span class="initcolor" style="background-color: #ecd13f;"></span>
+				</div>
+
+				<button class="showingcolor" style="margin: 10px 0;">New Color</button>
+			</div>
+
+			<div class="finalcolor" style="margin: 10px auto;">
+				<div class="checkcolor"></div>
+				<div class="formdiv">
+					<div class="labeldiv">
+						<span style="display: inline-block; width: 50px;">
+							<label for="redcolor">Red</label>
+						</span>		
+						<span style="display: inline-block;">
+							<input type="range" name="color" min="0" max="255" value="0" class="rangecolor">
+						</span>
+					</div>
+					<div class="labeldiv">
+						<span style="display: inline-block; width: 50px;">
+							<label for="greencolor">Green</label>
+						</span>		
+						<span style="display: inline-block;">
+							<input type="range" name="color" min="0" max="255" value="0" class="rangecolor">
+						</span>
+					</div>
+					<div class="labeldiv">
+						<span style="display: inline-block; width: 50px;" >
+							<label for="bluecolor">Blue</label>
+						</span>		
+						<span style="display: inline-block;">
+							<input type="range" name="color" min="0" max="255" value="0" class="rangecolor">
+						</span>
+					</div>
+				</div>
+				<button class="setcolor">Add Color</button>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="script.js"></script>
+
+	</body>
+
+</html>
